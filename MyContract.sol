@@ -15,4 +15,4 @@ contract MyContract {
   function valueCount() public  view returns(uint) {
     return values.length;
   }
-}
+};
