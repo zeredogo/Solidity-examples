@@ -10,14 +10,14 @@ contract HotelRoom {
         Occupied
     }
 
-    Statuses currentStatus;
+    Statuses public currentStatus;
 
     event Occupy(address _occupant, uint _value);
 
     address payable public owner;
 
     constructor() {
-        owner = msg.sender;
+        owner = payable(msg.sender);
         currentStatus = Statuses.Vacant;
     }
 
@@ -31,7 +31,7 @@ contract HotelRoom {
          _;
     }
  
-    function book() payable onlyWhileVacant {
+    function book() public payable onlyWhileVacant {
       currentStatus = Statuses.Occupied;
       owner.transfer(msg.value);
       (bool sent, bytes memory data) = owner.call{value: msg.value}('');
