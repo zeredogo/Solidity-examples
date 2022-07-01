@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 contract MyMapping{
     // Mappings
-    mapping(uint => string) names;
+    mapping(uint => string) public names;
     mapping(uint => Book) public books;
     mapping(address => mapping(uint => Book)) public myBook;
 
@@ -12,7 +12,7 @@ contract MyMapping{
         string author;
     }
 
-    constructor() public {
+    constructor() {
         names[1] = "Adam";
         names[2] = "Bruce";
         names[3] = "Carl";
