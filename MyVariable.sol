@@ -11,7 +11,7 @@ contract MyVariable {
     string public myString = 'Hello, World';
     bytes32 public myBytes32 = 'Hello, World';
 
-    address public myAddress = 0x0489774635678623475;
+    address public myAddress = 0x04897743463563478623465775;
 
     struct MyStruct {
         uint256 myUint256;
