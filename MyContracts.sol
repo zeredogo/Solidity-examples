@@ -1,21 +1,43 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract MyContracts {
-    address owner;
-    string secret;
+contract Ownable {
+     address owner;
 
-    modifier onlyOwner() {
+     modifier onlyOwner() {
         require(msg.sender == owner, "must be owner");
+        _;
     }
 
-    constructor(string memory _secret) public {
-        secret = secret;
+     constructor() {
         owner = msg.sender;
     }
 
-    function getSecret() public view onlyOwner returns(string) {
+    contract SecretVault {
+     string secret;
+
+     constructor(string memory _secret) {
+        secret = secret;
+    }
+
+     function getSecret () public view onlyOwner returns(string) {
         return secret;
+    }
+
+    }
+}
+
+contract MyContracts is Ownable{
+
+     constructor(string memory _secret)  {
+        SecretVault _secretVault = new SecretVault(_secret);
+        secretVault = address(_secretVault);
+        super;
+    }
+
+
+    function getSecret() public view onlyOwner returns(string) {
+        return SecretVault(secretVault).getSecret();
     }
 
 }
