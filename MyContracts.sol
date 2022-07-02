@@ -2,6 +2,9 @@
 pragma solidity ^0.8.0;
 
 contract Ownable {
+    // Inheritance
+    // Factories
+    // Interaction
      address owner;
 
      modifier onlyOwner() {
