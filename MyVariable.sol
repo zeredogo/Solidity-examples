@@ -3,8 +3,10 @@ pragma solidity ^0.8.0;
 
 contract MyVariable {
     // state variable
+    
     int256 myInt256 =1;
     uint public myUint = 1;
+    uint public Count = 5;
     uint256 public myUint256 =1;
     uint8 public myUint8 =1;
 
