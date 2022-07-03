@@ -3,7 +3,8 @@ pragma solidity ^0.8.0;
 
 contract MyMapping{
     // Mappings
-    mapping(uint => string) public names;
+    mapping(uint => uint) numbers;
+    mapping(uint => string) names;
     mapping(uint => Book) public books;
     mapping(address => mapping(uint => Book)) public myBook;
 
