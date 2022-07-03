@@ -14,6 +14,7 @@ contract MyMapping{
     }
 
     constructor() {
+        number[0] = 0;
         names[1] = "Adam";
         names[2] = "Bruce";
         names[3] = "Carl";
